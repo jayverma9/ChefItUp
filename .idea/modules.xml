@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BackEnd/BackEnd.iml" filepath="$PROJECT_DIR$/BackEnd/BackEnd.iml" />
       <module fileurl="file://$PROJECT_DIR$/ChefItUp.iml" filepath="$PROJECT_DIR$/ChefItUp.iml" />
       <module fileurl="file://$PROJECT_DIR$/FrontEnd/FrontEnd.iml" filepath="$PROJECT_DIR$/FrontEnd/FrontEnd.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ChefItUp-TeamPurple/chefitup.iml" filepath="$PROJECT_DIR$/ChefItUp-TeamPurple/chefitup.iml" />
     </modules>
   </component>
 </project>
