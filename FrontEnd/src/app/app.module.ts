@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { StuDashComponent } from './stu-dash/stu-dash.component';
 import { InstructorComponent } from './instructor/instructor.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     StuDashComponent,
-    InstructorComponent
+    InstructorComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule
