@@ -24,20 +24,11 @@
           </svg>
     </button>
   </div>
-  <nav>
-    <ul class="list-none font-bold text-1xl  ">
-            <li class ="inline-block hover:shadow-2xl mx-3 ">
-              <a href="#"> <img class="h-8"  src="../../assets/student_svg/subscribe.svg" alt="Add"> </a>
-            </li>
+  <a href="#"> <img class="w-12"  src="../../assets/student_svg/subscribe.svg" alt="Add"> </a>
 
-<!--            <li class ="inline-block pr-4 hover:shadow-2xl">-->
-<!--              <a  href="#"><img class="h-8 " src="../../assets/instructor_svg/shopping-cart.svg" alt="Add"> </a>-->
-<!--            </li>-->
-    </ul>
-  </nav>
 
   <div class="relative">
-    <button tabindex="-1" (click)="dropdownShowOrNot()" class=" relative z-10 block h-10 w-10 ">
+    <button tabindex="-1" (click)="dropdownShowOrNot()" class=" relative z-10 block h-10 w-10 mx-8">
       <img class="w-full w-full object-cover rounded-full overflow-hidden border-2 hover:border-blue-600  hover:shadow-2xl" src="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
     </button>
     <button *ngIf="isOpen" (click)="isOpen=false"  class="fixed top-0 right-0 left-0 bottom-0 h-full w-full bg-white opacity-50 cursor-default"></button>
