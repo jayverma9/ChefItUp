@@ -1,22 +1,24 @@
-package purple.Controllers.resource;
+package purple.Controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import purple.Controllers.document.Student;
-import purple.Controllers.repository.StudentRepository;
+import purple.POJOS.Student;
+import purple.DatabaseService.StudentService;
 
 import java.util.List;
 
-public class StudentResource {
+//This class will be responsible for the controller for all the student operations from front end
+
+public class StudentController {
 
     @RestController
     @RequestMapping("/rest/student")
     public class UsersResource {
 
-        private StudentRepository studentRepository;
+        private StudentService studentRepository;
 
-        public void StudentResource(StudentRepository studentRepository) {
+        public void StudentResource(StudentService studentRepository) {
             this.studentRepository = studentRepository;
         }
 
