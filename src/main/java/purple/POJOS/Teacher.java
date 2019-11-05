@@ -2,7 +2,7 @@ package purple.POJOS;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection = "Teacher")
 public class Teacher {
     private String username;
     private String password;
@@ -11,6 +11,12 @@ public class Teacher {
     private String type;
     private Recipe[] draftRecipes;
     private Recipe[] specialRecipes;
+
+    public Teacher(String username, String password, String name) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+    }
 
     public String getUsername() {
         return username;

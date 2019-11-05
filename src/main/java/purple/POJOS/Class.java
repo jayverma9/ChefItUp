@@ -2,12 +2,19 @@ package purple.POJOS;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection = "Class")
 public class Class {
     private String name;
     private String description;
     private Recipe[] recipes;
     private Student[] students;
+
+    public Class(String name, String description, Recipe[] recipes, Student[] students) {
+        this.name = name;
+        this.description = description;
+        this.recipes = new Recipe[0];
+        this.students = new Student[0];
+    }
 
     public String getName() {
         return name;

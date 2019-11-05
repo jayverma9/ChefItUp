@@ -2,13 +2,21 @@ package purple.POJOS;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection = "Utensil")
 public class Utensil {
     private String name;
     private String imagePath;
     private String volume;
     private String[] properties;
     private String description;
+
+    public Utensil(String name, String imagePath, String volume, String[] properties, String description) {
+        this.name = name;
+        this.imagePath = imagePath;
+        this.volume = volume;
+        this.properties = properties;
+        this.description = description;
+    }
 
     public String getName() {
         return name;

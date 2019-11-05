@@ -1,9 +1,8 @@
 package purple.POJOS;
 
-import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection = "Student")
 public class Student {
     private String username;
     private String password;
@@ -16,6 +15,9 @@ public class Student {
         this.username = username;
         this.password = password;
         this.name = name;
+        this.classList = new Class[0];
+        this.type = "";
+        this.cookedRecipes = new Recipe[0];
     }
 
     public String getUsername() {
