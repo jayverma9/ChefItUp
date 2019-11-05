@@ -1,5 +1,8 @@
 package purple.POJOS;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Utensil {
     private String name;
     private String imagePath;

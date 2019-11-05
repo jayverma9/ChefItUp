@@ -1,5 +1,8 @@
 package purple.POJOS;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Ingredient {
     private String name;
     private String imagePath;
