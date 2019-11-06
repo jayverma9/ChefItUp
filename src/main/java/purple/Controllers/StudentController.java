@@ -13,7 +13,7 @@ import java.util.List;
 public class StudentController {
 
     @RestController
-    @RequestMapping("/rest/student")
+    @RequestMapping("/rest/Student")
     public class UsersResource {
 
         private StudentService studentRepository;
