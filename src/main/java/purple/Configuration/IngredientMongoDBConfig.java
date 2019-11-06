@@ -5,18 +5,18 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-import purple.Repositories.TeacherRepository;
-import purple.POJOS.Teacher;
+import purple.POJOS.Ingredient;
+import purple.Repositories.IngredientRepository;
 
 //This class handles mongo configurations
 @Configuration
-@EnableMongoRepositories(basePackageClasses = TeacherRepository.class)
-public class TeacherMongoDBConfig {
+@EnableMongoRepositories(basePackageClasses = IngredientRepository.class)
+public class IngredientMongoDBConfig {
     @Autowired
     @Bean
-    CommandLineRunner commandLineRunner(TeacherRepository teacherRepository) {
+    CommandLineRunner commandLineRunner(IngredientRepository ingredientRepository) {
         return strings -> {
-            teacherRepository.save(new Teacher("Rluthra", "123", "Rohit Luthra"));
+            ingredientRepository.save(new Ingredient("parsley", "In my ass", "leafy vegetable", "solid", "smells good"));
         };
     }
 }

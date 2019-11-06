@@ -5,18 +5,18 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-import purple.Repositories.TeacherRepository;
-import purple.POJOS.Teacher;
+import purple.POJOS.Utensil;
+import purple.Repositories.UtensilRepository;
 
 //This class handles mongo configurations
 @Configuration
-@EnableMongoRepositories(basePackageClasses = TeacherRepository.class)
-public class TeacherMongoDBConfig {
+@EnableMongoRepositories(basePackageClasses = UtensilRepository.class)
+public class UtensilMongoDBConfig {
     @Autowired
     @Bean
-    CommandLineRunner commandLineRunner(TeacherRepository teacherRepository) {
+    CommandLineRunner commandLineRunner(UtensilRepository utensilRepository) {
         return strings -> {
-            teacherRepository.save(new Teacher("Rluthra", "123", "Rohit Luthra"));
+            utensilRepository.save(new Utensil("pan", "in my ass", "size of my ass", new String[0], "blah blah my ass"));
         };
     }
 }
