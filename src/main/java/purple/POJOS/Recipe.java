@@ -1,5 +1,8 @@
 package purple.POJOS;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "Recipe")
 public class Recipe {
     private String name;
     private String description;
@@ -7,6 +10,15 @@ public class Recipe {
     private Utensil[] utensils;
     private String[] steps;
     private Student[] students;
+
+    public Recipe(String name, String description, Ingredient[] ingredients, Utensil[] utensils, String[] steps, Student[] students) {
+        this.name = name;
+        this.description = description;
+        this.ingredients = ingredients;
+        this.utensils = utensils;
+        this.steps = steps;
+        this.students = students;
+    }
 
     public String getName() {
         return name;
