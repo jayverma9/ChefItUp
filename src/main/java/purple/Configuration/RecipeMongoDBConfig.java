@@ -4,7 +4,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import purple.POJOS.Ingredient;
 import purple.POJOS.Recipe;
@@ -16,7 +15,7 @@ import purple.Repositories.RecipeRepository;
 @Configuration
 @EnableMongoRepositories(basePackageClasses = RecipeRepository.class)
 public class RecipeMongoDBConfig {
-    @Autowired
+
     @Bean
     CommandLineRunner commandLineRunner(RecipeRepository recipeRepository) {
         return strings -> {

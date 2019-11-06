@@ -1,6 +1,5 @@
 package purple.Configuration;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +11,7 @@ import purple.Repositories.UtensilRepository;
 @Configuration
 @EnableMongoRepositories(basePackageClasses = UtensilRepository.class)
 public class UtensilMongoDBConfig {
-    @Autowired
+
     @Bean
     CommandLineRunner commandLineRunner(UtensilRepository utensilRepository) {
         return strings -> {

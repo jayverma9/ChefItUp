@@ -1,6 +1,5 @@
 package purple.Configuration;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +13,7 @@ import purple.Repositories.ClassRepository;
 @Configuration
 @EnableMongoRepositories(basePackageClasses = ClassRepository.class)
 public class ClassMongoDBConfig {
-    @Autowired
+
     @Bean
     CommandLineRunner commandLineRunner(ClassRepository classRepository) {
         return strings -> {

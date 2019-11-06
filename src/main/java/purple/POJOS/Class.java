@@ -12,8 +12,8 @@ public class Class {
     public Class(String name, String description, Recipe[] recipes, Student[] students) {
         this.name = name;
         this.description = description;
-        this.recipes = new Recipe[0];
-        this.students = new Student[0];
+        this.recipes = recipes;
+        this.students = students;
     }
 
     public String getName() {
