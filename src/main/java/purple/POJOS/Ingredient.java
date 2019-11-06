@@ -1,11 +1,22 @@
 package purple.POJOS;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "Ingredient")
 public class Ingredient {
     private String name;
     private String imagePath;
     private String type;
     private String state;
     private String description;
+
+    public Ingredient(String name, String imagePath, String type, String state, String description) {
+        this.name = name;
+        this.imagePath = imagePath;
+        this.type = type;
+        this.state = state;
+        this.description = description;
+    }
 
     public String getName() {
         return name;
