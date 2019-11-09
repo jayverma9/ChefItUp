@@ -13,12 +13,13 @@
     <bytecodeTargetLevel>
       <module name="BackEnd" target="1.8" />
       <module name="chefitup" target="1.8" />
-      <module name="ChefItUp" target="1.5" />
+      <module name="ChefItUp" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="BackEnd" options="-parameters" />
+      <module name="ChefItUp" options="-parameters" />
       <module name="chefitup" options="-parameters" />
     </option>
   </component>
