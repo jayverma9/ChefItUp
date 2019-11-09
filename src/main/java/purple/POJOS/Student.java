@@ -3,23 +3,24 @@ package purple.POJOS;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Arrays;
+import java.util.List;
 
 @Document(collection = "Student")
 public class Student {
     private String username;
     private String password;
     private String name;
-    private Class[] classList;
+    private List<Class> classList;
     private String type;
-    private Recipe[] cookedRecipes;
+    private List<Recipe> cookedRecipes;
 
-    public Student(String username, String password, String name) {
+    public Student(String username, String password, String name, List<Class> classList, String type, List<Recipe> cookedRecipes) {
         this.username = username;
         this.password = password;
         this.name = name;
-        this.classList = new Class[0];
-        this.type = "";
-        this.cookedRecipes = new Recipe[0];
+        this.classList = classList;
+        this.type = type;
+        this.cookedRecipes = cookedRecipes;
     }
 
     public String getUsername() {
@@ -46,11 +47,11 @@ public class Student {
         this.name = name;
     }
 
-    public Class[] getClassList() {
+    public List<Class> getClassList() {
         return classList;
     }
 
-    public void setClassList(Class[] classList) {
+    public void setClassList(List<Class> classList) {
         this.classList = classList;
     }
 
@@ -62,11 +63,11 @@ public class Student {
         this.type = type;
     }
 
-    public Recipe[] getCookedRecipes() {
+    public List<Recipe> getCookedRecipes() {
         return cookedRecipes;
     }
 
-    public void setCookedRecipes(Recipe[] cookedRecipes) {
+    public void setCookedRecipes(List<Recipe> cookedRecipes) {
         this.cookedRecipes = cookedRecipes;
     }
 
@@ -76,9 +77,9 @@ public class Student {
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
-                ", classList=" + Arrays.toString(classList) +
+                ", classList=" + classList +
                 ", type='" + type + '\'' +
-                ", cookedRecipes=" + Arrays.toString(cookedRecipes) +
+                ", cookedRecipes=" + cookedRecipes +
                 '}';
     }
 }

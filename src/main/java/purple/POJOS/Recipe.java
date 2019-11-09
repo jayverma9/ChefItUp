@@ -3,17 +3,18 @@ package purple.POJOS;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Arrays;
+import java.util.List;
 
 @Document(collection = "Recipe")
 public class Recipe {
     private String name;
     private String description;
-    private Ingredient[] ingredients;
-    private Utensil[] utensils;
+    private List<Ingredient> ingredients;
+    private List<Utensil> utensils;
     private String[] steps;
     private Student[] students;
 
-    public Recipe(String name, String description, Ingredient[] ingredients, Utensil[] utensils, String[] steps, Student[] students) {
+    public Recipe(String name, String description, List<Ingredient> ingredients, List<Utensil> utensils, String[] steps, Student[] students) {
         this.name = name;
         this.description = description;
         this.ingredients = ingredients;
@@ -38,19 +39,19 @@ public class Recipe {
         this.description = description;
     }
 
-    public Ingredient[] getIngredients() {
+    public List<Ingredient> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(Ingredient[] ingredients) {
+    public void setIngredients(List<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
 
-    public Utensil[] getUtensils() {
+    public List<Utensil> getUtensils() {
         return utensils;
     }
 
-    public void setUtensils(Utensil[] utensils) {
+    public void setUtensils(List<Utensil> utensils) {
         this.utensils = utensils;
     }
 
@@ -75,8 +76,8 @@ public class Recipe {
         return "Recipe{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", ingredients=" + Arrays.toString(ingredients) +
-                ", utensils=" + Arrays.toString(utensils) +
+                ", ingredients=" + ingredients +
+                ", utensils=" + utensils +
                 ", steps=" + Arrays.toString(steps) +
                 ", students=" + Arrays.toString(students) +
                 '}';

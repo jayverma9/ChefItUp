@@ -3,21 +3,26 @@ package purple.POJOS;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Arrays;
+import java.util.List;
 
 @Document(collection = "Teacher")
 public class Teacher {
     private String username;
     private String password;
     private String name;
-    private Class[] classList;
+    private List<Class> classList;
     private String type;
-    private Recipe[] draftRecipes;
-    private Recipe[] specialRecipes;
+    private List<Recipe> draftRecipes;
+    private List<Recipe> specialRecipes;
 
-    public Teacher(String username, String password, String name) {
+    public Teacher(String username, String password, String name, List<Class> classList, String type, List<Recipe> draftRecipes, List<Recipe> specialRecipes) {
         this.username = username;
         this.password = password;
         this.name = name;
+        this.classList = classList;
+        this.type = type;
+        this.draftRecipes = draftRecipes;
+        this.specialRecipes = specialRecipes;
     }
 
     public String getUsername() {
@@ -44,11 +49,11 @@ public class Teacher {
         this.name = name;
     }
 
-    public Class[] getClassList() {
+    public List<Class> getClassList() {
         return classList;
     }
 
-    public void setClassList(Class[] classList) {
+    public void setClassList(List<Class> classList) {
         this.classList = classList;
     }
 
@@ -60,19 +65,19 @@ public class Teacher {
         this.type = type;
     }
 
-    public Recipe[] getDraftRecipes() {
+    public List<Recipe> getDraftRecipes() {
         return draftRecipes;
     }
 
-    public void setDraftRecipes(Recipe[] draftRecipes) {
+    public void setDraftRecipes(List<Recipe> draftRecipes) {
         this.draftRecipes = draftRecipes;
     }
 
-    public Recipe[] getSpecialRecipes() {
+    public List<Recipe> getSpecialRecipes() {
         return specialRecipes;
     }
 
-    public void setSpecialRecipes(Recipe[] specialRecipes) {
+    public void setSpecialRecipes(List<Recipe> specialRecipes) {
         this.specialRecipes = specialRecipes;
     }
 
@@ -82,10 +87,10 @@ public class Teacher {
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
-                ", classList=" + Arrays.toString(classList) +
+                ", classList=" + classList +
                 ", type='" + type + '\'' +
-                ", draftRecipes=" + Arrays.toString(draftRecipes) +
-                ", specialRecipes=" + Arrays.toString(specialRecipes) +
+                ", draftRecipes=" + draftRecipes +
+                ", specialRecipes=" + specialRecipes +
                 '}';
     }
 }
