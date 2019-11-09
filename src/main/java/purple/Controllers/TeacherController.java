@@ -22,18 +22,17 @@ public class TeacherController {
 
     @CrossOrigin
     @RequestMapping(value = "login", method = RequestMethod.GET)
-    public ResponseEntity<String> loginAttempt(@RequestParam(name = "username") String username, @RequestParam(name = "password") String password) {
+    public ResponseEntity<Teacher> loginAttempt(@RequestParam(name = "username") String username, @RequestParam(name = "password") String password) {
         List<Teacher> all_users = teacherRepository.findAll();
         String hi = "";
         for (Teacher teacher : all_users) {
             if (teacher.getPassword().equals(password) && teacher.getUsername().equals(username)) {
-                hi = "true";
-                return new ResponseEntity<String>(hi, HttpStatus.OK);
+                return new ResponseEntity<Teacher>(teacher, HttpStatus.OK);
             } else {
                 hi = "false";
             }
         }
-        return new ResponseEntity<String>(hi, HttpStatus.OK);
+        return new ResponseEntity<Teacher>(new Teacher(null, null, null), HttpStatus.OK);
     }
 
     @CrossOrigin
