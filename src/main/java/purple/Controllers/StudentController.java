@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import purple.POJOS.Student;
+import purple.POJOS.Teacher;
 import purple.Repositories.StudentRepository;
 
 import java.util.List;
@@ -21,18 +22,17 @@ public class StudentController {
 
     @CrossOrigin
     @RequestMapping(value = "login", method = RequestMethod.GET)
-    public ResponseEntity<String> loginAttempt(@RequestParam(name = "username") String username, @RequestParam(name = "password") String password) {
+    public ResponseEntity<Student> loginAttempt(@RequestParam(name = "username") String username, @RequestParam(name = "password") String password) {
         List<Student> all_users = studentRepository.findAll();
         String hi = "";
         for (Student student : all_users) {
             if (student.getPassword().equals(password) && student.getUsername().equals(username)) {
-                hi = "true";
-                return new ResponseEntity<String>(hi, HttpStatus.OK);
+                return new ResponseEntity<Student>(student, HttpStatus.OK);
             } else {
-                hi = "false";
+                return new ResponseEntity<Student>(new Student(null, null, null), HttpStatus.OK);
             }
         }
-        return new ResponseEntity<String>(hi, HttpStatus.OK);
+        return null;
     }
 
     @CrossOrigin
