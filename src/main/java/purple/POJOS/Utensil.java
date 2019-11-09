@@ -2,6 +2,8 @@ package purple.POJOS;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Arrays;
+
 @Document(collection = "Utensil")
 public class Utensil {
     private String name;
@@ -56,5 +58,16 @@ public class Utensil {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Utensil{" +
+                "name='" + name + '\'' +
+                ", imagePath='" + imagePath + '\'' +
+                ", volume='" + volume + '\'' +
+                ", properties=" + Arrays.toString(properties) +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

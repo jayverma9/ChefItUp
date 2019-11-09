@@ -2,6 +2,8 @@ package purple.POJOS;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Arrays;
+
 @Document(collection = "Recipe")
 public class Recipe {
     private String name;
@@ -66,5 +68,17 @@ public class Recipe {
 
     public void setStudents(Student[] students) {
         this.students = students;
+    }
+
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", ingredients=" + Arrays.toString(ingredients) +
+                ", utensils=" + Arrays.toString(utensils) +
+                ", steps=" + Arrays.toString(steps) +
+                ", students=" + Arrays.toString(students) +
+                '}';
     }
 }

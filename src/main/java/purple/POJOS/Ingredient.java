@@ -57,4 +57,15 @@ public class Ingredient {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "Ingredient{" +
+                "name='" + name + '\'' +
+                ", imagePath='" + imagePath + '\'' +
+                ", type='" + type + '\'' +
+                ", state='" + state + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
