@@ -12,9 +12,9 @@ public class Recipe {
     private List<Ingredient> ingredients;
     private List<Utensil> utensils;
     private String[] steps;
-    private Student[] students;
+    private List<Student> students;
 
-    public Recipe(String name, String description, List<Ingredient> ingredients, List<Utensil> utensils, String[] steps, Student[] students) {
+    public Recipe(String name, String description, List<Ingredient> ingredients, List<Utensil> utensils, String[] steps, List<Student> students) {
         this.name = name;
         this.description = description;
         this.ingredients = ingredients;
@@ -63,11 +63,11 @@ public class Recipe {
         this.steps = steps;
     }
 
-    public Student[] getStudents() {
+    public List<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(Student[] students) {
+    public void setStudents(List<Student> students) {
         this.students = students;
     }
 
@@ -79,7 +79,7 @@ public class Recipe {
                 ", ingredients=" + ingredients +
                 ", utensils=" + utensils +
                 ", steps=" + Arrays.toString(steps) +
-                ", students=" + Arrays.toString(students) +
+                ", students=" + students +
                 '}';
     }
 }
