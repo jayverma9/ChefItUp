@@ -1,8 +1,12 @@
 package purple.Controllers;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.mongodb.util.JSON;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import purple.POJOS.Class;
+import purple.Repositories.ClassRepository;
 import purple.Repositories.TeacherRepository;
 import purple.POJOS.Teacher;
 
@@ -15,7 +19,8 @@ import java.util.List;
 public class TeacherController {
 
     private TeacherRepository teacherRepository;
-
+    private ClassRepository classRepository;
+    private Teacher teacher;
     public TeacherController(TeacherRepository teacherRepository) {
         this.teacherRepository = teacherRepository;
     }
@@ -27,6 +32,7 @@ public class TeacherController {
         String hi = "";
         for (Teacher teacher : all_users) {
             if (teacher.getPassword().equals(password) && teacher.getUsername().equals(username)) {
+                this.teacher = teacher;
                 return new ResponseEntity<Teacher>(teacher, HttpStatus.OK);
             } else {
                 hi = "false";
@@ -55,4 +61,26 @@ public class TeacherController {
 //        }
         return new ResponseEntity<String>(hi, HttpStatus.OK);
     }
+
+//    @CrossOrigin
+//    @PostMapping(value = "addNewClass")
+//    public ResponseEntity<String> addClass(@RequestBody JSONPObject classs) {
+//
+//        this.teacher.getClassList().add(clase);
+//        teacherRepository.delete(this.teacher);
+//        teacherRepository.save(this.teacher);
+//        classRepository.save(clase);
+//
+////        List<Users> all_users = usersRepository.findAll();
+//        String hi = "true";
+////        for (Users user:all_users) {
+////            if(user.getPassword().equals(password) && user.getEmail().equals(email)) {
+////                hi = "true";
+////            }
+////            else {
+////                hi = "false";
+////            }
+////        }
+//        return new ResponseEntity<String>(hi, HttpStatus.OK);
+//    }
 }

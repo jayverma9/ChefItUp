@@ -2,14 +2,16 @@ package purple.POJOS;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
+
 @Document(collection = "Class")
 public class Class {
     private String name;
     private String description;
-    private Recipe[] recipes;
-    private Student[] students;
+    private ArrayList<Recipe> recipes;
+    private ArrayList<Student> students;
 
-    public Class(String name, String description, Recipe[] recipes, Student[] students) {
+    public Class(String name, String description, ArrayList<Recipe> recipes, ArrayList<Student> students) {
         this.name = name;
         this.description = description;
         this.recipes = recipes;
@@ -32,19 +34,19 @@ public class Class {
         this.description = description;
     }
 
-    public Recipe[] getRecipes() {
+    public ArrayList<Recipe> getRecipes() {
         return recipes;
     }
 
-    public void setRecipes(Recipe[] recipes) {
+    public void setRecipes(ArrayList<Recipe> recipes) {
         this.recipes = recipes;
     }
 
-    public Student[] getStudents() {
+    public ArrayList<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(Student[] students) {
+    public void setStudents(ArrayList<Student> students) {
         this.students = students;
     }
 }
