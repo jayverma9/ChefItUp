@@ -19,7 +19,7 @@ public class ClassMongoDBConfig {
     @Bean
     CommandLineRunner commandLineRunner(ClassRepository classRepository) {
         return strings -> {
-            classRepository.save(new Class("Greek Food", "blah blah chutiya",  new ArrayList<Recipe>(), new ArrayList<>()));
+            classRepository.save(new Class("Greek Food", "blah blah chutiya"));
         };
     }
 }
