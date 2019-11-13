@@ -1,16 +1,26 @@
 package purple.POJOS;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+import java.util.ArrayList;
+
+@Document(collection = "Student")
 public class Student {
     private String username;
     private String password;
     private String name;
-    private Class[] classList;
+    private ArrayList<Class> classList;
     private String type;
-    private Recipe[] cookedRecipes;
+    private ArrayList<Recipe> cookedRecipes;
+
+    public Student(String username, String password, String name) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.classList = new ArrayList<>();
+        this.type = "";
+        this.cookedRecipes = new ArrayList<>();
+    }
 
     public String getUsername() {
         return username;
@@ -36,11 +46,11 @@ public class Student {
         this.name = name;
     }
 
-    public Class[] getClassList() {
+    public ArrayList<Class> getClassList() {
         return classList;
     }
 
-    public void setClassList(Class[] classList) {
+    public void setClassList(ArrayList<Class> classList) {
         this.classList = classList;
     }
 
@@ -52,12 +62,11 @@ public class Student {
         this.type = type;
     }
 
-    public Recipe[] getCookedRecipes() {
+    public ArrayList<Recipe> getCookedRecipes() {
         return cookedRecipes;
     }
 
-    public void setCookedRecipes(Recipe[] cookedRecipes) {
+    public void setCookedRecipes(ArrayList<Recipe> cookedRecipes) {
         this.cookedRecipes = cookedRecipes;
     }
-
 }

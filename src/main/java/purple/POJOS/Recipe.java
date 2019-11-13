@@ -1,12 +1,26 @@
 package purple.POJOS;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.ArrayList;
+
+@Document(collection = "Recipe")
 public class Recipe {
     private String name;
     private String description;
-    private Ingredient[] ingredients;
-    private Utensil[] utensils;
+    private ArrayList<Ingredient> ingredients;
+    private ArrayList<Utensil> utensils;
     private String[] steps;
-    private Student[] students;
+    private ArrayList<Student> students;
+
+    public Recipe(String name, String description, ArrayList<Ingredient> ingredients, ArrayList<Utensil> utensils, String[] steps, ArrayList<Student> students) {
+        this.name = name;
+        this.description = description;
+        this.ingredients = ingredients;
+        this.utensils = utensils;
+        this.steps = steps;
+        this.students = students;
+    }
 
     public String getName() {
         return name;
@@ -24,19 +38,19 @@ public class Recipe {
         this.description = description;
     }
 
-    public Ingredient[] getIngredients() {
+    public ArrayList<Ingredient> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(Ingredient[] ingredients) {
+    public void setIngredients(ArrayList<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
 
-    public Utensil[] getUtensils() {
+    public ArrayList<Utensil> getUtensils() {
         return utensils;
     }
 
-    public void setUtensils(Utensil[] utensils) {
+    public void setUtensils(ArrayList<Utensil> utensils) {
         this.utensils = utensils;
     }
 
@@ -48,11 +62,11 @@ public class Recipe {
         this.steps = steps;
     }
 
-    public Student[] getStudents() {
+    public ArrayList<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(Student[] students) {
+    public void setStudents(ArrayList<Student> students) {
         this.students = students;
     }
 }
