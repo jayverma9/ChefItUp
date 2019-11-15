@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 @Document(collection = "Teacher")
 public class Teacher {
+    private String id;
     private String username;
     private String password;
     private String name;
@@ -19,6 +20,14 @@ public class Teacher {
         this.username = username;
         this.password = password;
         this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUsername() {

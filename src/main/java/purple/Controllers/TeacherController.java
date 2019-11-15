@@ -25,6 +25,7 @@ public class TeacherController {
 
 
     private TeacherRepository teacherRepository;
+    private Teacher teacher;
     private ClassRepository classRepository;
 
     public TeacherController(TeacherRepository teacherRepository, ClassRepository classRepository) {
@@ -39,7 +40,8 @@ public class TeacherController {
         String hi = "";
         for (Teacher teacher : all_users) {
             if (teacher.getPassword().equals(password) && teacher.getUsername().equals(username)) {
-//                this.teacher = teacher;
+                this.teacher = teacher;
+                System.out.println(this.teacher.getId());
                 return new ResponseEntity<Teacher>(teacher, HttpStatus.OK);
             } else {
                 hi = "false";
@@ -101,6 +103,7 @@ public class TeacherController {
     public ResponseEntity<String> updateTeacher(@RequestBody String teacher) {
         System.out.println("Teacher is here bro");
         Gson g = new Gson();
+        teacherRepository.delete(this.teacher);
 
         //JSON file to Java object
         System.out.println(teacher);
