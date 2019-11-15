@@ -95,4 +95,29 @@ public class TeacherController {
 //        }
         return new ResponseEntity<String>(hi, HttpStatus.OK);
     }
+
+    @CrossOrigin
+    @RequestMapping(value = "updateTeacher", method = RequestMethod.POST)
+    public ResponseEntity<String> updateTeacher(@RequestBody String teacher) {
+        System.out.println("Teacher is here bro");
+        Gson g = new Gson();
+
+        //JSON file to Java object
+        System.out.println(teacher);
+        Teacher teacherr = g.fromJson(teacher, Teacher.class);
+        teacherRepository.save(teacherr);
+
+
+//        List<Users> all_users = usersRepository.findAll();
+        String hi = "true";
+//        for (Users user:all_users) {
+//            if(user.getPassword().equals(password) && user.getEmail().equals(email)) {
+//                hi = "true";
+//            }
+//            else {
+//                hi = "false";
+//            }
+//        }
+        return new ResponseEntity<String>(hi, HttpStatus.OK);
+    }
 }

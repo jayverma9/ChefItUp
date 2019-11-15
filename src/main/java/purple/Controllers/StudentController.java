@@ -24,15 +24,14 @@ public class StudentController {
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public ResponseEntity<Student> loginAttempt(@RequestParam(name = "username") String username, @RequestParam(name = "password") String password) {
         List<Student> all_users = studentRepository.findAll();
+        System.out.println(all_users.size());
         String hi = "";
         for (Student student : all_users) {
             if (student.getPassword().equals(password) && student.getUsername().equals(username)) {
                 return new ResponseEntity<Student>(student, HttpStatus.OK);
-            } else {
-                return new ResponseEntity<Student>(new Student(null, null, null), HttpStatus.OK);
             }
         }
-        return null;
+        return new ResponseEntity<Student>(new Student(null, null, null), HttpStatus.OK);
     }
 
     @CrossOrigin
