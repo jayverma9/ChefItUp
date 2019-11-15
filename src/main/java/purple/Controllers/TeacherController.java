@@ -23,7 +23,7 @@ import java.util.List;
 @RequestMapping("/rest/Teacher")
 public class TeacherController {
 
-
+    private Teacher teacher;
     private TeacherRepository teacherRepository;
     private ClassRepository classRepository;
 
@@ -39,7 +39,7 @@ public class TeacherController {
         String hi = "";
         for (Teacher teacher : all_users) {
             if (teacher.getPassword().equals(password) && teacher.getUsername().equals(username)) {
-//                this.teacher = teacher;
+                this.teacher = teacher;
                 return new ResponseEntity<Teacher>(teacher, HttpStatus.OK);
             } else {
                 hi = "false";
@@ -105,6 +105,7 @@ public class TeacherController {
         //JSON file to Java object
         System.out.println(teacher);
         Teacher teacherr = g.fromJson(teacher, Teacher.class);
+        teacherRepository.delete(this.teacher);
         teacherRepository.save(teacherr);
 
 

@@ -7,6 +7,16 @@ import java.util.ArrayList;
 
 @Document(collection = "Teacher")
 public class Teacher {
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     private String username;
     private String password;
     private String name;
