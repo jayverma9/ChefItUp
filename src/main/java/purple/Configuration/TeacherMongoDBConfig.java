@@ -16,6 +16,7 @@ public class TeacherMongoDBConfig {
     @Bean
     CommandLineRunner commandLineRunner(TeacherRepository teacherRepository) {
         return strings -> {
+            teacherRepository.save(new Teacher("ROHIT", "abc", "ROHIT SINGH THARDAK"));
             teacherRepository.save(new Teacher("Rluthra", "123", "Rohit Luthra"));
         };
     }

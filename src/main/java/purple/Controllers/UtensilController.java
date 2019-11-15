@@ -1,9 +1,15 @@
 package purple.Controllers;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import purple.Repositories.RecipeRepository;
+import purple.POJOS.Utensil;
 import purple.Repositories.UtensilRepository;
+
+import java.util.List;
 
 //This class will be responsible for the controller for all the student operations from front end
 @RestController
@@ -16,4 +22,11 @@ public class UtensilController {
         this.utensilRepository = utensilRepository;
     }
 
+
+    @CrossOrigin
+    @RequestMapping(value = "utensils", method = RequestMethod.GET)
+    public ResponseEntity<List<Utensil>> allUtensils() {
+        List<Utensil> all_utensils = utensilRepository.findAll();
+        return new ResponseEntity<List<Utensil>>(all_utensils, HttpStatus.OK);
+    }
 }
