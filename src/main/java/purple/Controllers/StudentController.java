@@ -3,7 +3,6 @@ package purple.Controllers;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import purple.POJOS.Class;
 import purple.POJOS.Student;
 import purple.POJOS.Teacher;
 import purple.Repositories.StudentRepository;
@@ -25,15 +24,14 @@ public class StudentController {
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public ResponseEntity<Student> loginAttempt(@RequestParam(name = "username") String username, @RequestParam(name = "password") String password) {
         List<Student> all_users = studentRepository.findAll();
+        System.out.println(all_users.size());
         String hi = "";
         for (Student student : all_users) {
             if (student.getPassword().equals(password) && student.getUsername().equals(username)) {
                 return new ResponseEntity<Student>(student, HttpStatus.OK);
-            } else {
-                return new ResponseEntity<Student>(new Student(null, null, null, null, null, null), HttpStatus.OK);
             }
         }
-        return null;
+        return new ResponseEntity<Student>(new Student(null, null, null), HttpStatus.OK);
     }
 
     @CrossOrigin
@@ -43,9 +41,7 @@ public class StudentController {
         System.out.println(email);
         System.out.println(password);
         System.out.println("SUCCESS");
-        List<Class> emptyClass = null;
-
-        studentRepository.save(new Student(email, fullname, password, emptyClass, "", null));
+        studentRepository.save(new Student(email, fullname, password));
 //        List<Users> all_users = usersRepository.findAll();
         String hi = "true";
 //        for (Users user:all_users) {
