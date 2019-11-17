@@ -62,10 +62,10 @@ public class TeacherController {
         return new ResponseEntity<String>(hi, HttpStatus.OK);
     }
 
-//    @CrossOrigin
-//    @PostMapping(value = "addNewClass")
-//    public ResponseEntity<String> addClass(@RequestBody JSONPObject classs) {
-//
+    @CrossOrigin
+    @PostMapping(value = "addNewClass")
+    public ResponseEntity<String> addClass(@RequestBody JSONPObject classs) {
+
 //        this.teacher.getClassList().add(clase);
 //        teacherRepository.delete(this.teacher);
 //        teacherRepository.save(this.teacher);
@@ -81,6 +81,12 @@ public class TeacherController {
 ////                hi = "false";
 ////            }
 ////        }
+
+
+
+
+
+            return null;
 //        return new ResponseEntity<String>(hi, HttpStatus.OK);
-//    }
+    }
 }
