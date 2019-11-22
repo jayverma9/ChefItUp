@@ -23,7 +23,7 @@ import java.util.List;
 @RequestMapping("/rest/Teacher")
 public class TeacherController {
 
-
+    private Teacher teacher;
     private TeacherRepository teacherRepository;
     private ClassRepository classRepository;
 
@@ -39,7 +39,7 @@ public class TeacherController {
         String hi = "";
         for (Teacher teacher : all_users) {
             if (teacher.getPassword().equals(password) && teacher.getUsername().equals(username)) {
-//                this.teacher = teacher;
+                this.teacher = teacher;
                 return new ResponseEntity<Teacher>(teacher, HttpStatus.OK);
             } else {
                 hi = "false";
@@ -81,6 +81,32 @@ public class TeacherController {
             System.out.println(classss.getName());
             Class clase = new Class(classss.getName(), classss.getDescription());
             classRepository.save(clase);
+
+
+//        List<Users> all_users = usersRepository.findAll();
+        String hi = "true";
+//        for (Users user:all_users) {
+//            if(user.getPassword().equals(password) && user.getEmail().equals(email)) {
+//                hi = "true";
+//            }
+//            else {
+//                hi = "false";
+//            }
+//        }
+        return new ResponseEntity<String>(hi, HttpStatus.OK);
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "updateTeacher", method = RequestMethod.POST)
+    public ResponseEntity<String> updateTeacher(@RequestBody String teacher) {
+        System.out.println("Teacher is here bro");
+        Gson g = new Gson();
+
+        //JSON file to Java object
+        System.out.println(teacher);
+        Teacher teacherr = g.fromJson(teacher, Teacher.class);
+        teacherRepository.delete(this.teacher);
+        teacherRepository.save(teacherr);
 
 
 //        List<Users> all_users = usersRepository.findAll();
