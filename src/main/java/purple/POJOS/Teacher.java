@@ -11,16 +11,16 @@ public class Teacher {
     private String username;
     private String password;
     private String name;
-//    private List<Class> classList;
+    private List<Class> classList;
     private String type;
     private List<Recipe> draftRecipes;
     private List<Recipe> specialRecipes;
 
-    public Teacher(String username, String password, String name, String type, List<Recipe> draftRecipes, List<Recipe> specialRecipes) {
+    public Teacher(String username, String password, String name, List<Class> classList, String type, List<Recipe> draftRecipes, List<Recipe> specialRecipes) {
         this.username = username;
         this.password = password;
         this.name = name;
-//        this.classList = classList;
+        this.classList = classList;
         this.type = type;
         this.draftRecipes = draftRecipes;
         this.specialRecipes = specialRecipes;
@@ -58,13 +58,13 @@ public class Teacher {
         this.name = name;
     }
 
-//    public List<Class> getClassList() {
-//        return classList;
-//    }
-//
-//    public void setClassList(List<Class> classList) {
-//        this.classList = classList;
-//    }
+    public List<Class> getClassList() {
+        return classList;
+    }
+
+    public void setClassList(List<Class> classList) {
+        this.classList = classList;
+    }
 
     public String getType() {
         return type;
@@ -96,7 +96,7 @@ public class Teacher {
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
-//                ", classList=" + classList +
+                ", classList=" + classList +
                 ", type='" + type + '\'' +
                 ", draftRecipes=" + draftRecipes +
                 ", specialRecipes=" + specialRecipes +

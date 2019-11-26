@@ -11,7 +11,7 @@ public class Student {
     private String username;
     private String password;
     private String name;
-//    private ArrayList<Class> classList;
+    private ArrayList<Class> classList;
     private String type;
     private ArrayList<Recipe> cookedRecipes;
 
@@ -19,16 +19,16 @@ public class Student {
         this.username = "";
         this.password = "";
         this.name = "";
-//        this.classList = null;
+        this.classList = null;
         this.type = "";
         this.cookedRecipes = null;
     };
 
-    public Student(String username, String password, String name, /*ArrayList<Class> classList,*/ String type, ArrayList<Recipe> cookedRecipes) {
+    public Student(String username, String password, String name, ArrayList<Class> classList, String type, ArrayList<Recipe> cookedRecipes) {
         this.username = username;
         this.password = password;
         this.name = name;
-//        this.classList = classList;
+        this.classList = classList;
         this.type = type;
         this.cookedRecipes = cookedRecipes;
     }
@@ -57,13 +57,13 @@ public class Student {
         this.name = name;
     }
 
-//    public List<Class> getClassList() {
-//        return classList;
-//    }
-//
-//    public void setClassList(ArrayList<Class> classList) {
-//        this.classList = classList;
-//    }
+    public List<Class> getClassList() {
+        return classList;
+    }
+
+    public void setClassList(ArrayList<Class> classList) {
+        this.classList = classList;
+    }
 
     public String getType() {
         return type;
@@ -87,7 +87,7 @@ public class Student {
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
-//                ", classList=" + classList +
+                ", classList=" + classList +
                 ", type='" + type + '\'' +
                 ", cookedRecipes=" + cookedRecipes +
                 '}';

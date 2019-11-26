@@ -11,23 +11,23 @@ public class Class {
     private String description;
     private List<Recipe> recipes;
     private List<Student> students;
-    private Teacher classOwner;
+//    private Teacher classOwner;
 
-    public Class(String name, String description, List<Recipe> recipes, List<Student> students, Teacher owner) {
+    public Class(String name, String description, List<Recipe> recipes, List<Student> students/*, Teacher owner*/) {
         this.name = name;
         this.description = description;
         this.recipes = recipes;
         this.students = students;
-        this.classOwner = owner;
+//        this.classOwner = owner;
     }
 
-    public Teacher getClassOwner() {
-        return classOwner;
-    }
-
-    public void setClassOwner(Teacher classOwner) {
-        this.classOwner = classOwner;
-    }
+//    public Teacher getClassOwner() {
+//        return classOwner;
+//    }
+//
+//    public void setClassOwner(Teacher classOwner) {
+//        this.classOwner = classOwner;
+//    }
 
     public void setRecipes(List<Recipe> recipes) {
         this.recipes = recipes;

@@ -32,7 +32,7 @@ public class StudentController {
                 return new ResponseEntity<Student>(student, HttpStatus.OK);
             }
         }
-        return new ResponseEntity<Student>(new Student(null, null, null, null, null), HttpStatus.OK);
+        return new ResponseEntity<Student>(new Student(null, null, null, null, null, null), HttpStatus.OK);
     }
 
     @CrossOrigin
@@ -42,7 +42,7 @@ public class StudentController {
         System.out.println(email);
         System.out.println(password);
         System.out.println("SUCCESS");
-        studentRepository.save(new Student(email, fullname, password, null, null));
+        studentRepository.save(new Student(email, fullname, password, null, null, null));
 //        List<Users> all_users = usersRepository.findAll();
         String hi = "true";
 //        for (Users user:all_users) {

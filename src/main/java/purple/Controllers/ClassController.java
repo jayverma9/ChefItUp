@@ -34,18 +34,18 @@ public class ClassController {
         return new ResponseEntity<List<Class>>(classe, HttpStatus.OK);
     }
 
-    @CrossOrigin
-    @RequestMapping(value = "getClasses", method = RequestMethod.POST)
-    public ResponseEntity<List<Class>> getClasses(@RequestBody String teacher) {
-        List<Class> all_classes = classRepository.findAll();
-        List<Class> classe = new ArrayList<>();
-
-        for(Class cls : all_classes){
-
-            if(cls.getClassOwner().equals(teacher)){
-                classe.add(cls);
-            }
-        }
-        return new ResponseEntity<List<Class>>(classe, HttpStatus.OK);
-    }
+//    @CrossOrigin
+//    @RequestMapping(value = "getClasses", method = RequestMethod.POST)
+//    public ResponseEntity<List<Class>> getClasses(@RequestBody String teacher) {
+//        List<Class> all_classes = classRepository.findAll();
+//        List<Class> classe = new ArrayList<>();
+//
+//        for(Class cls : all_classes){
+//
+//            if(cls.getClassOwner().equals(teacher)){
+//                classe.add(cls);
+//            }
+//        }
+//        return new ResponseEntity<List<Class>>(classe, HttpStatus.OK);
+//    }
 }

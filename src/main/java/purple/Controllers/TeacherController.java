@@ -54,7 +54,7 @@ public class TeacherController {
                 hi = "false";
             }
         }
-        return new ResponseEntity<Teacher>(new Teacher(null, null, null, null, null, null), HttpStatus.OK);
+        return new ResponseEntity<Teacher>(new Teacher(null, null, null, null, null, null, null), HttpStatus.OK);
     }
 
     @CrossOrigin
@@ -64,7 +64,7 @@ public class TeacherController {
         System.out.println(email);
         System.out.println(password);
         System.out.println("SUCCESS");
-        teacherRepository.save(new Teacher(email, fullname, password, null, null, null));
+        teacherRepository.save(new Teacher(email, fullname, password, null, null, null, null));
 //        List<Users> all_users = usersRepository.findAll();
         String hi = "true";
 //        for (Users user:all_users) {
@@ -88,7 +88,7 @@ public class TeacherController {
         System.out.println(classs);
         ClassNew classss = g.fromJson(classs, ClassNew.class);
         System.out.println(classss.getName());
-        Class clase = new Class(classss.getName(), classss.getDescription(), null, null, null);
+        Class clase = new Class(classss.getName(), classss.getDescription(), null, null);
         classRepository.save(clase);
 
 
