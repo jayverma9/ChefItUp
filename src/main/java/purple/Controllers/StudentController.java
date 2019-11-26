@@ -23,6 +23,7 @@ public class StudentController {
     @CrossOrigin
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public ResponseEntity<Student> loginAttempt(@RequestParam(name = "username") String username, @RequestParam(name = "password") String password) {
+
         List<Student> all_users = studentRepository.findAll();
         System.out.println(all_users.size());
         String hi = "";
@@ -31,7 +32,7 @@ public class StudentController {
                 return new ResponseEntity<Student>(student, HttpStatus.OK);
             }
         }
-        return new ResponseEntity<Student>(new Student(null, null, null), HttpStatus.OK);
+        return new ResponseEntity<Student>(new Student(null, null, null, null, null), HttpStatus.OK);
     }
 
     @CrossOrigin
@@ -41,7 +42,7 @@ public class StudentController {
         System.out.println(email);
         System.out.println(password);
         System.out.println("SUCCESS");
-        studentRepository.save(new Student(email, fullname, password));
+        studentRepository.save(new Student(email, fullname, password, null, null));
 //        List<Users> all_users = usersRepository.findAll();
         String hi = "true";
 //        for (Users user:all_users) {

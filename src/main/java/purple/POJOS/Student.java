@@ -2,6 +2,7 @@ package purple.POJOS;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,15 +11,24 @@ public class Student {
     private String username;
     private String password;
     private String name;
-    private List<Class> classList;
+//    private ArrayList<Class> classList;
     private String type;
-    private List<Recipe> cookedRecipes;
+    private ArrayList<Recipe> cookedRecipes;
 
-    public Student(String username, String password, String name, List<Class> classList, String type, List<Recipe> cookedRecipes) {
+    public Student(){
+        this.username = "";
+        this.password = "";
+        this.name = "";
+//        this.classList = null;
+        this.type = "";
+        this.cookedRecipes = null;
+    };
+
+    public Student(String username, String password, String name, /*ArrayList<Class> classList,*/ String type, ArrayList<Recipe> cookedRecipes) {
         this.username = username;
         this.password = password;
         this.name = name;
-        this.classList = classList;
+//        this.classList = classList;
         this.type = type;
         this.cookedRecipes = cookedRecipes;
     }
@@ -47,13 +57,13 @@ public class Student {
         this.name = name;
     }
 
-    public List<Class> getClassList() {
-        return classList;
-    }
-
-    public void setClassList(List<Class> classList) {
-        this.classList = classList;
-    }
+//    public List<Class> getClassList() {
+//        return classList;
+//    }
+//
+//    public void setClassList(ArrayList<Class> classList) {
+//        this.classList = classList;
+//    }
 
     public String getType() {
         return type;
@@ -67,7 +77,7 @@ public class Student {
         return cookedRecipes;
     }
 
-    public void setCookedRecipes(List<Recipe> cookedRecipes) {
+    public void setCookedRecipes(ArrayList<Recipe> cookedRecipes) {
         this.cookedRecipes = cookedRecipes;
     }
 
@@ -77,7 +87,7 @@ public class Student {
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
-                ", classList=" + classList +
+//                ", classList=" + classList +
                 ", type='" + type + '\'' +
                 ", cookedRecipes=" + cookedRecipes +
                 '}';

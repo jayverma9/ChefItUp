@@ -3,18 +3,37 @@ package purple.POJOS;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Document(collection = "Class")
 public class Class {
     private String name;
     private String description;
-    private ArrayList<Recipe> recipes;
-    private ArrayList<Student> students;
+    private List<Recipe> recipes;
+    private List<Student> students;
+    private Teacher classOwner;
 
-    public Class(String name, String description, ArrayList<Recipe> recipes, ArrayList<Student> students) {
+    public Class(String name, String description, List<Recipe> recipes, List<Student> students, Teacher owner) {
         this.name = name;
         this.description = description;
         this.recipes = recipes;
+        this.students = students;
+        this.classOwner = owner;
+    }
+
+    public Teacher getClassOwner() {
+        return classOwner;
+    }
+
+    public void setClassOwner(Teacher classOwner) {
+        this.classOwner = classOwner;
+    }
+
+    public void setRecipes(List<Recipe> recipes) {
+        this.recipes = recipes;
+    }
+
+    public void setStudents(List<Student> students) {
         this.students = students;
     }
 
@@ -34,7 +53,7 @@ public class Class {
         this.description = description;
     }
 
-    public ArrayList<Recipe> getRecipes() {
+    public List<Recipe> getRecipes() {
         return recipes;
     }
 
@@ -42,7 +61,7 @@ public class Class {
         this.recipes = recipes;
     }
 
-    public ArrayList<Student> getStudents() {
+    public List<Student> getStudents() {
         return students;
     }
 
@@ -50,13 +69,5 @@ public class Class {
         this.students = students;
     }
 
-    @Override
-    public String toString() {
-        return "Class{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", recipes=" + recipes +
-                ", students=" + students +
-                '}';
-    }
+
 }
