@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 //This class will be responsible for the controller for all the student operations from front end
+//Following is s controller which is mapped to /rest/class URI
+
+// This is handle REST request
 @RestController
 @RequestMapping("/rest/Class")
 public class ClassController {
