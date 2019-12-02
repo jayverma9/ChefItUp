@@ -22,8 +22,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/rest/Teacher")
 public class TeacherController {
-
-
     private TeacherRepository teacherRepository;
     private Teacher teacher;
     private ClassRepository classRepository;
