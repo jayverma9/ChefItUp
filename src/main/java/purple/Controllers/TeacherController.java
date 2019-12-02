@@ -23,8 +23,9 @@ import java.util.List;
 @RequestMapping("/rest/Teacher")
 public class TeacherController {
 
-    private Teacher teacher;
+
     private TeacherRepository teacherRepository;
+    private Teacher teacher;
     private ClassRepository classRepository;
 
     public TeacherController(TeacherRepository teacherRepository, ClassRepository classRepository) {
@@ -40,6 +41,7 @@ public class TeacherController {
         for (Teacher teacher : all_users) {
             if (teacher.getPassword().equals(password) && teacher.getUsername().equals(username)) {
                 this.teacher = teacher;
+                System.out.println(this.teacher.getId());
                 return new ResponseEntity<Teacher>(teacher, HttpStatus.OK);
             } else {
                 hi = "false";
@@ -101,11 +103,11 @@ public class TeacherController {
     public ResponseEntity<String> updateTeacher(@RequestBody String teacher) {
         System.out.println("Teacher is here bro");
         Gson g = new Gson();
+        teacherRepository.delete(this.teacher);
 
         //JSON file to Java object
         System.out.println(teacher);
         Teacher teacherr = g.fromJson(teacher, Teacher.class);
-        teacherRepository.delete(this.teacher);
         teacherRepository.save(teacherr);
 
 
