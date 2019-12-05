@@ -62,4 +62,21 @@ public class StudentController {
         return new ResponseEntity<String>(hi, HttpStatus.OK);
     }
 
+    @CrossOrigin
+    @RequestMapping(value = "studentClasses", method = RequestMethod.GET)
+    public ResponseEntity<List<Class>> getClasses(@RequestParam(name = "student") String username) {
+        List<Class> all_classes = classRepository.findAll();
+        List<Class> student_classes = new ArrayList<>();
+        for (Class classs : all_classes) {
+            if (classs.getStudents().contains(username)) {
+                student_classes.add(classs);
+            }
+        }
+        System.out.println(student_classes.toString());
+        return new ResponseEntity<List<Class>>(student_classes, HttpStatus.OK);
+    }
+
+
+
+
 }

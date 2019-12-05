@@ -12,9 +12,6 @@ import purple.Repositories.ClassRepository;
 import purple.Repositories.TeacherRepository;
 import purple.POJOS.Teacher;
 
-import javax.swing.*;
-import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.List;
 
 //This class will be responsible for the controller for all the student operations from front end
@@ -80,6 +77,7 @@ public class TeacherController {
             ClassNew classss = g.fromJson(classs, ClassNew.class);
             System.out.println(classss.getName());
             Class clase = new Class(classss.getName(), classss.getDescription());
+            clase.setInstructor(classss.getInstructor());
             classRepository.save(clase);
 
 

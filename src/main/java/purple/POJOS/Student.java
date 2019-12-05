@@ -7,6 +7,7 @@ import java.util.List;
 
 @Document(collection = "Student")
 public class Student {
+    private String id;
     private String username;
     private String password;
     private String name;
@@ -21,6 +22,14 @@ public class Student {
         this.classList = classList;
         this.type = "";
         this.cookedRecipes = new ArrayList<>();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUsername() {

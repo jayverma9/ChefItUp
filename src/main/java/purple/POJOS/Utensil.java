@@ -4,6 +4,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Utensil")
 public class Utensil {
+    private String id;
     private String name;
     private String imagePath;
     private String volume;
@@ -16,6 +17,14 @@ public class Utensil {
         this.volume = volume;
         this.properties = properties;
         this.description = description;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
