@@ -16,6 +16,12 @@ public class Teacher {
     private List<Recipe> draftRecipes;
     private List<Recipe> specialRecipes;
 
+    public Teacher(String id, String username, String password) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+    }
+
     public Teacher(String username, String password, String name, List<Class> classList, String type, List<Recipe> draftRecipes, List<Recipe> specialRecipes) {
         this.username = username;
         this.password = password;

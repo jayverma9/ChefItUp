@@ -7,6 +7,7 @@ import java.util.List;
 
 @Document(collection = "Recipe")
 public class Recipe {
+    private String id;
     private String name;
     private String description;
     private List<Ingredient> ingredients;
@@ -21,6 +22,14 @@ public class Recipe {
         this.utensils = utensils;
         this.steps = steps;
         this.students = students;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

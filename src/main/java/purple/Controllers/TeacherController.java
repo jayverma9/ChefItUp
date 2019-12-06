@@ -36,17 +36,10 @@ public class TeacherController {
     @CrossOrigin
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public ResponseEntity<Teacher> loginAttempt(@RequestParam(name = "username") String username, @RequestParam(name = "password") String password) {
-
-        System.out.print("username: " + username + "\n Password: " + password);
         List<Teacher> all_users = teacherRepository.findAll();
         String hi = "";
-        System.out.print(all_users + "\n");
-
         for (Teacher teacher : all_users) {
-
-            System.out.print(teacher + "\n");
             if (teacher.getPassword().equals(password) && teacher.getUsername().equals(username)) {
-                System.out.print("Teacher Found: " + teacher);
                 this.teacher = teacher;
                 System.out.println(this.teacher.getId());
                 return new ResponseEntity<Teacher>(teacher, HttpStatus.OK);
@@ -54,7 +47,7 @@ public class TeacherController {
                 hi = "false";
             }
         }
-        return new ResponseEntity<Teacher>(new Teacher(null, null, null, null, null, null, null), HttpStatus.OK);
+        return new ResponseEntity<Teacher>(new Teacher(null, null, null), HttpStatus.OK);
     }
 
     @CrossOrigin
@@ -64,7 +57,7 @@ public class TeacherController {
         System.out.println(email);
         System.out.println(password);
         System.out.println("SUCCESS");
-        teacherRepository.save(new Teacher(email, fullname, password, null, null, null, null));
+        teacherRepository.save(new Teacher(email, fullname, password));
 //        List<Users> all_users = usersRepository.findAll();
         String hi = "true";
 //        for (Users user:all_users) {
@@ -85,11 +78,12 @@ public class TeacherController {
         Gson g = new Gson();
 
         //JSON file to Java object
-        System.out.println(classs);
-        ClassNew classss = g.fromJson(classs, ClassNew.class);
-        System.out.println(classss.getName());
-        Class clase = new Class(classss.getName(), classss.getDescription(), null, null);
-        classRepository.save(clase);
+            System.out.println(classs);
+            ClassNew classss = g.fromJson(classs, ClassNew.class);
+            System.out.println(classss.getName());
+            Class clase = new Class(classss.getName(), classss.getDescription());
+            clase.setInstructor(classss.getInstructor());
+            classRepository.save(clase);
 
 
 //        List<Users> all_users = usersRepository.findAll();
@@ -131,8 +125,3 @@ public class TeacherController {
         return new ResponseEntity<String>(hi, HttpStatus.OK);
     }
 }
-
-
-
-
-

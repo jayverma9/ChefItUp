@@ -3,38 +3,35 @@ package purple.POJOS;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @Document(collection = "Class")
 public class Class {
+    private String instructor;
+    private String id;
     private String name;
     private String description;
-    private List<Recipe> recipes;
-    private List<Student> students;
-//    private Teacher classOwner;
+    private ArrayList<Recipe> recipes;
+    private ArrayList<String> students;
 
-    public Class(String name, String description, List<Recipe> recipes, List<Student> students/*, Teacher owner*/) {
+    public Class(String name, String description) {
         this.name = name;
         this.description = description;
-        this.recipes = recipes;
-        this.students = students;
-//        this.classOwner = owner;
     }
 
-//    public Teacher getClassOwner() {
-//        return classOwner;
-//    }
-//
-//    public void setClassOwner(Teacher classOwner) {
-//        this.classOwner = classOwner;
-//    }
-
-    public void setRecipes(List<Recipe> recipes) {
-        this.recipes = recipes;
+    public String getInstructor() {
+        return instructor;
     }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
+    public void setInstructor(String instructor) {
+        this.instructor = instructor;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -53,7 +50,7 @@ public class Class {
         this.description = description;
     }
 
-    public List<Recipe> getRecipes() {
+    public ArrayList<Recipe> getRecipes() {
         return recipes;
     }
 
@@ -61,13 +58,11 @@ public class Class {
         this.recipes = recipes;
     }
 
-    public List<Student> getStudents() {
+    public ArrayList<String> getStudents() {
         return students;
     }
 
-    public void setStudents(ArrayList<Student> students) {
+    public void setStudents(ArrayList<String> students) {
         this.students = students;
     }
-
-
 }

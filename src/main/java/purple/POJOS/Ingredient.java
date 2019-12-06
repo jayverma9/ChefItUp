@@ -4,6 +4,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Ingredient")
 public class Ingredient {
+    private String id;
     private String name;
     private String imagePath;
     private String type;
@@ -16,6 +17,14 @@ public class Ingredient {
         this.type = type;
         this.state = state;
         this.description = description;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
