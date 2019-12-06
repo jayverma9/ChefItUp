@@ -70,6 +70,7 @@ public class StudentController {
         for (Class classs : all_classes) {
             if (classs.getStudents().contains(username)) {
                 student_classes.add(classs);
+                System.out.println(classs);
             }
         }
         System.out.println(student_classes.toString());
