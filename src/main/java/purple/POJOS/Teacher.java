@@ -2,6 +2,7 @@ package purple.POJOS;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,25 +12,16 @@ public class Teacher {
     private String username;
     private String password;
     private String name;
-    private List<Class> classList;
+    private ArrayList<Class> classList;
     private String type;
-    private List<Recipe> draftRecipes;
-    private List<Recipe> specialRecipes;
+    private ArrayList<Recipe> draftRecipes;
+    private ArrayList<Recipe> specialRecipes;
 
-    public Teacher(String id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-    }
-
-    public Teacher(String username, String password, String name, List<Class> classList, String type, List<Recipe> draftRecipes, List<Recipe> specialRecipes) {
+    public Teacher(String username, String password, String name) {
         this.username = username;
         this.password = password;
         this.name = name;
-        this.classList = classList;
-        this.type = type;
-        this.draftRecipes = draftRecipes;
-        this.specialRecipes = specialRecipes;
+
     }
 
     public String getId() {
@@ -68,7 +60,7 @@ public class Teacher {
         return classList;
     }
 
-    public void setClassList(List<Class> classList) {
+    public void setClassList(ArrayList<Class> classList) {
         this.classList = classList;
     }
 
@@ -84,7 +76,7 @@ public class Teacher {
         return draftRecipes;
     }
 
-    public void setDraftRecipes(List<Recipe> draftRecipes) {
+    public void setDraftRecipes(ArrayList<Recipe> draftRecipes) {
         this.draftRecipes = draftRecipes;
     }
 
@@ -92,7 +84,7 @@ public class Teacher {
         return specialRecipes;
     }
 
-    public void setSpecialRecipes(List<Recipe> specialRecipes) {
+    public void setSpecialRecipes(ArrayList<Recipe> specialRecipes) {
         this.specialRecipes = specialRecipes;
     }
 

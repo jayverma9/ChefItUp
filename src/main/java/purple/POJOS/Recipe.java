@@ -2,6 +2,7 @@ package purple.POJOS;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,12 +11,12 @@ public class Recipe {
     private String id;
     private String name;
     private String description;
-    private List<Ingredient> ingredients;
-    private List<Utensil> utensils;
-    private String[] steps;
-    private List<Student> students;
+    private ArrayList<Ingredient> ingredients;
+    private ArrayList<Utensil> utensils;
+    private ArrayList<String[]> steps;
+    private ArrayList<Student> students;
 
-    public Recipe(String name, String description, List<Ingredient> ingredients, List<Utensil> utensils, String[] steps, List<Student> students) {
+    public Recipe(String name, String description, ArrayList<Ingredient> ingredients, ArrayList<Utensil> utensils, ArrayList<String[]> steps, ArrayList<Student> students) {
         this.name = name;
         this.description = description;
         this.ingredients = ingredients;
@@ -52,7 +53,7 @@ public class Recipe {
         return ingredients;
     }
 
-    public void setIngredients(List<Ingredient> ingredients) {
+    public void setIngredients(ArrayList<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
 
@@ -60,15 +61,15 @@ public class Recipe {
         return utensils;
     }
 
-    public void setUtensils(List<Utensil> utensils) {
+    public void setUtensils(ArrayList<Utensil> utensils) {
         this.utensils = utensils;
     }
 
-    public String[] getSteps() {
+    public ArrayList<String[]> getSteps() {
         return steps;
     }
 
-    public void setSteps(String[] steps) {
+    public void setSteps(ArrayList<String[]> steps) {
         this.steps = steps;
     }
 
@@ -76,7 +77,7 @@ public class Recipe {
         return students;
     }
 
-    public void setStudents(List<Student> students) {
+    public void setStudents(ArrayList<Student> students) {
         this.students = students;
     }
 
@@ -87,7 +88,7 @@ public class Recipe {
                 ", description='" + description + '\'' +
                 ", ingredients=" + ingredients +
                 ", utensils=" + utensils +
-                ", steps=" + Arrays.toString(steps) +
+                ", steps=" + steps +
                 ", students=" + students +
                 '}';
     }
