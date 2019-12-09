@@ -13,10 +13,10 @@ public class Recipe {
     private String description;
     private ArrayList<Ingredient> ingredients;
     private ArrayList<Utensil> utensils;
-    private ArrayList<String[]> steps;
+    private ArrayList<Step> steps;
     private ArrayList<Student> students;
 
-    public Recipe(String name, String description, ArrayList<Ingredient> ingredients, ArrayList<Utensil> utensils, ArrayList<String[]> steps, ArrayList<Student> students) {
+    public Recipe(String name, String description, ArrayList<Ingredient> ingredients, ArrayList<Utensil> utensils, ArrayList<Step> steps, ArrayList<Student> students) {
         this.name = name;
         this.description = description;
         this.ingredients = ingredients;
@@ -65,11 +65,11 @@ public class Recipe {
         this.utensils = utensils;
     }
 
-    public ArrayList<String[]> getSteps() {
+    public ArrayList<Step> getSteps() {
         return steps;
     }
 
-    public void setSteps(ArrayList<String[]> steps) {
+    public void setSteps(ArrayList<Step> steps) {
         this.steps = steps;
     }
 
