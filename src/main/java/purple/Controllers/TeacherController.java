@@ -59,17 +59,11 @@ public class TeacherController {
         System.out.println(email);
         System.out.println(password);
         System.out.println("SUCCESS");
-        teacherRepository.save(new Teacher(email, password, fullname ));
-//        List<Users> all_users = usersRepository.findAll();
+        Teacher newteach = new Teacher(email, password, fullname);
+        System.out.println("IDHAR");
+        System.out.println(newteach+" Yes");
+        teacherRepository.save(newteach);
         String hi = "true";
-//        for (Users user:all_users) {
-//            if(user.getPassword().equals(password) && user.getEmail().equals(email)) {
-//                hi = "true";
-//            }
-//            else {
-//                hi = "false";
-//            }
-//        }
         return new ResponseEntity<String>(hi, HttpStatus.OK);
     }
 
