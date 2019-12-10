@@ -3,23 +3,34 @@ package purple.POJOS;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Document(collection = "Recipe")
 public class Recipe {
+    private String id;
     private String name;
     private String description;
     private ArrayList<Ingredient> ingredients;
     private ArrayList<Utensil> utensils;
-    private String[] steps;
+    private ArrayList<Step> steps;
     private ArrayList<Student> students;
 
-    public Recipe(String name, String description, ArrayList<Ingredient> ingredients, ArrayList<Utensil> utensils, String[] steps, ArrayList<Student> students) {
+    public Recipe(String name, String description, ArrayList<Ingredient> ingredients, ArrayList<Utensil> utensils, ArrayList<Step> steps, ArrayList<Student> students) {
         this.name = name;
         this.description = description;
         this.ingredients = ingredients;
         this.utensils = utensils;
         this.steps = steps;
         this.students = students;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -38,7 +49,7 @@ public class Recipe {
         this.description = description;
     }
 
-    public ArrayList<Ingredient> getIngredients() {
+    public List<Ingredient> getIngredients() {
         return ingredients;
     }
 
@@ -46,7 +57,7 @@ public class Recipe {
         this.ingredients = ingredients;
     }
 
-    public ArrayList<Utensil> getUtensils() {
+    public List<Utensil> getUtensils() {
         return utensils;
     }
 
@@ -54,19 +65,31 @@ public class Recipe {
         this.utensils = utensils;
     }
 
-    public String[] getSteps() {
+    public ArrayList<Step> getSteps() {
         return steps;
     }
 
-    public void setSteps(String[] steps) {
+    public void setSteps(ArrayList<Step> steps) {
         this.steps = steps;
     }
 
-    public ArrayList<Student> getStudents() {
+    public List<Student> getStudents() {
         return students;
     }
 
     public void setStudents(ArrayList<Student> students) {
         this.students = students;
+    }
+
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", ingredients=" + ingredients +
+                ", utensils=" + utensils +
+                ", steps=" + steps +
+                ", students=" + students +
+                '}';
     }
 }

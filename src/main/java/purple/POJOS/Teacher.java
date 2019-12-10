@@ -2,8 +2,9 @@ package purple.POJOS;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Document(collection = "Teacher")
 public class Teacher {
@@ -14,12 +15,13 @@ public class Teacher {
     private ArrayList<Class> classList;
     private String type;
     private ArrayList<Recipe> draftRecipes;
-    private ArrayList<Recipe>specialRecipes;
+    private ArrayList<Recipe> specialRecipes;
 
     public Teacher(String username, String password, String name) {
         this.username = username;
         this.password = password;
         this.name = name;
+
     }
 
     public String getId() {
@@ -54,7 +56,7 @@ public class Teacher {
         this.name = name;
     }
 
-    public ArrayList<Class> getClassList() {
+    public List<Class> getClassList() {
         return classList;
     }
 
@@ -70,7 +72,7 @@ public class Teacher {
         this.type = type;
     }
 
-    public ArrayList<Recipe> getDraftRecipes() {
+    public List<Recipe> getDraftRecipes() {
         return draftRecipes;
     }
 
@@ -78,11 +80,24 @@ public class Teacher {
         this.draftRecipes = draftRecipes;
     }
 
-    public ArrayList<Recipe> getSpecialRecipes() {
+    public List<Recipe> getSpecialRecipes() {
         return specialRecipes;
     }
 
     public void setSpecialRecipes(ArrayList<Recipe> specialRecipes) {
         this.specialRecipes = specialRecipes;
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", classList=" + classList +
+                ", type='" + type + '\'' +
+                ", draftRecipes=" + draftRecipes +
+                ", specialRecipes=" + specialRecipes +
+                '}';
     }
 }

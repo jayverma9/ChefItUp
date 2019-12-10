@@ -6,14 +6,33 @@ import java.util.ArrayList;
 
 @Document(collection = "Class")
 public class Class {
+    private String instructor;
+    private String id;
     private String name;
     private String description;
     private ArrayList<Recipe> recipes;
-    private ArrayList<Student> students;
+    private ArrayList<String> students;
 
-    public Class(String name, String description) {
+    public Class(String name, String description, ArrayList<String> students) {
         this.name = name;
         this.description = description;
+        this.students = students;
+    }
+
+    public String getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(String instructor) {
+        this.instructor = instructor;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -40,11 +59,11 @@ public class Class {
         this.recipes = recipes;
     }
 
-    public ArrayList<Student> getStudents() {
+    public ArrayList<String> getStudents() {
         return students;
     }
 
-    public void setStudents(ArrayList<Student> students) {
+    public void setStudents(ArrayList<String> students) {
         this.students = students;
     }
 }

@@ -7,15 +7,23 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="backend" />
+        <module name="ChefItUp" />
+        <module name="BackEnd" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="BackEnd" target="1.8" />
       <module name="backend" target="1.8" />
+      <module name="chefitup" target="1.8" />
+      <module name="ChefItUp" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BackEnd" options="-parameters" />
+      <module name="ChefItUp" options="-parameters" />
       <module name="backend" options="-parameters" />
+      <module name="chefitup" options="-parameters" />
     </option>
   </component>
 </project>

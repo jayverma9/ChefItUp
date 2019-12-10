@@ -16,7 +16,7 @@ public class StudentMongoDBConfig {
     @Bean
     CommandLineRunner commandLineRunner(StudentRepository studentRepository) {
         return strings -> {
-            studentRepository.save(new Student("rohitsingh", "tatti", "Rohit Singh"));
+//            studentRepository.save(new Student("rohitsingh", "tatti", "Rohit Singh"));
         };
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import purple.POJOS.Class;
 import purple.POJOS.ClassNew;
+import purple.POJOS.Student;
 import purple.Repositories.ClassRepository;
 import purple.Repositories.TeacherRepository;
 import purple.POJOS.Teacher;
@@ -15,6 +16,7 @@ import purple.POJOS.Teacher;
 import javax.swing.*;
 import java.io.IOException;
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.List;
 
 //This class will be responsible for the controller for all the student operations from front end
@@ -81,7 +83,8 @@ public class TeacherController {
             System.out.println(classs);
             ClassNew classss = g.fromJson(classs, ClassNew.class);
             System.out.println(classss.getName());
-            Class clase = new Class(classss.getName(), classss.getDescription());
+            Class clase = new Class(classss.getName(), classss.getDescription(), new ArrayList<String>());
+            clase.setInstructor(classss.getInstructor());
             classRepository.save(clase);
 
 
