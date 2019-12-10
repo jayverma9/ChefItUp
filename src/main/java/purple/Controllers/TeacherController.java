@@ -59,7 +59,7 @@ public class TeacherController {
         System.out.println(email);
         System.out.println(password);
         System.out.println("SUCCESS");
-        teacherRepository.save(new Teacher(email, fullname, password));
+        teacherRepository.save(new Teacher(email, password, fullname ));
 //        List<Users> all_users = usersRepository.findAll();
         String hi = "true";
 //        for (Users user:all_users) {

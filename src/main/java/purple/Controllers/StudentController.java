@@ -9,6 +9,7 @@ import purple.POJOS.Class;
 import purple.Repositories.ClassRepository;
 import purple.Repositories.StudentRepository;
 
+//import javax.xml.soap.SOAPPart;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +49,7 @@ public class StudentController {
         System.out.println(email);
         System.out.println(password);
         System.out.println("SUCCESS");
-        studentRepository.save(new Student(email, fullname, password, new ArrayList<>()));
+        studentRepository.save(new Student(email, password, fullname, new ArrayList<>()));
 //        List<Users> all_users = usersRepository.findAll();
         String hi = "true";
 //        for (Users user:all_users) {
