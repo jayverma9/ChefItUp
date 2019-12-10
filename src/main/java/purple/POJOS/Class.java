@@ -13,9 +13,10 @@ public class Class {
     private ArrayList<Recipe> recipes;
     private ArrayList<String> students;
 
-    public Class(String name, String description) {
+    public Class(String name, String description, ArrayList<String> students) {
         this.name = name;
         this.description = description;
+        this.students = students;
     }
 
     public String getInstructor() {
