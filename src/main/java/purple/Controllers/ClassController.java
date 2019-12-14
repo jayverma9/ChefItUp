@@ -71,7 +71,7 @@ public class ClassController {
 
     @CrossOrigin
     @RequestMapping(value = "updateClass", method = RequestMethod.POST)
-    public ResponseEntity<String> updateTeacher(@RequestBody String classs) {
+    public ResponseEntity<String> UpdateClass(@RequestBody String classs) {
         System.out.println("Class is here bro");
         Gson g = new Gson();
 
@@ -91,6 +91,20 @@ public class ClassController {
 //                hi = "false";
 //            }
 //        }
+        return new ResponseEntity<String>(hi, HttpStatus.OK);
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "deleteClass", method = RequestMethod.POST)
+    public ResponseEntity<String> deleteClass(@RequestBody String classs) {
+        System.out.println("Class is here bro");
+        Gson g = new Gson();
+
+        //JSON file to Java object
+        System.out.println(classs);
+        Class classss = g.fromJson(classs, Class.class);
+        classRepository.delete(classss);
+        String hi = "true";
         return new ResponseEntity<String>(hi, HttpStatus.OK);
     }
 }
