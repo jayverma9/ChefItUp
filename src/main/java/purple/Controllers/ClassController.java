@@ -81,16 +81,7 @@ public class ClassController {
         classRepository.save(classss);
 
 
-//        List<Users> all_users = usersRepository.findAll();
         String hi = "true";
-//        for (Users user:all_users) {
-//            if(user.getPassword().equals(password) && user.getEmail().equals(email)) {
-//                hi = "true";
-//            }
-//            else {
-//                hi = "false";
-//            }
-//        }
         return new ResponseEntity<String>(hi, HttpStatus.OK);
     }
 
