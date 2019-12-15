@@ -5,6 +5,7 @@ public class Step {
     private String action;
     private String description;
 
+
     public Step(Ingredient ingredient, String action, String description) {
         this.ingredient = ingredient;
         this.action = action;
