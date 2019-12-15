@@ -6,7 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 import purple.POJOS.AmazonAWSClient;
 
 @RestController
-@RequestMapping("/storage/")
+@RequestMapping("/storage")
 public class AWSBucketController {
 
     private AmazonAWSClient amazonClient;

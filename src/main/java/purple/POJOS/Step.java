@@ -1,14 +1,36 @@
 package purple.POJOS;
 
+import java.io.File;
+
 public class Step {
     private Ingredient ingredient;
     private String action;
     private String description;
+    private String outcome;
+    private File imageFile;
 
-    public Step(Ingredient ingredient, String action, String description) {
+    public Step(Ingredient ingredient, String action, String description, String outcome, File imageFile) {
         this.ingredient = ingredient;
         this.action = action;
         this.description = description;
+        this.outcome = outcome;
+        this.imageFile = imageFile;
+    }
+
+    public String getOutcome() {
+        return outcome;
+    }
+
+    public void setOutcome(String outcome) {
+        this.outcome = outcome;
+    }
+
+    public File getImageFile() {
+        return imageFile;
+    }
+
+    public void setImageFile(File imageFile) {
+        this.imageFile = imageFile;
     }
 
     public String getDescription() {
