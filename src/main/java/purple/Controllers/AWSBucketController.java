@@ -16,6 +16,7 @@ public class AWSBucketController {
         this.amazonClient = amazonClient;
     }
 
+    @CrossOrigin
     @PostMapping("/uploadFile")
     public String uploadFile(@RequestPart(value = "file") MultipartFile file) {
         return this.amazonClient.uploadFile(file);
