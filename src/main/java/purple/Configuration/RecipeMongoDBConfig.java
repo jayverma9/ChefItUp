@@ -14,7 +14,7 @@ import purple.Repositories.RecipeRepository;
 //This class handles mongo configurations
 @Configuration
 @EnableMongoRepositories(basePackageClasses = RecipeRepository.class)
-public class RecipeMongoDBConfig {
+public class  RecipeMongoDBConfig {
 
     @Bean
     CommandLineRunner commandLineRunner(RecipeRepository recipeRepository) {
