@@ -10,20 +10,29 @@ import java.util.List;
 public class Recipe {
     private String id;
     private String name;
+    private String imagePath;
     private String description;
     private ArrayList<Ingredient> ingredients;
     private ArrayList<Utensil> utensils;
     private ArrayList<Step> steps;
     private ArrayList<Student> students;
 
-
-    public Recipe(String name, String description, ArrayList<Ingredient> ingredients, ArrayList<Utensil> utensils, ArrayList<Step> steps, ArrayList<Student> students) {
+    public Recipe(String name, String description, String imagePath, ArrayList<Ingredient> ingredients, ArrayList<Utensil> utensils, ArrayList<Step> steps, ArrayList<Student> students) {
         this.name = name;
         this.description = description;
         this.ingredients = ingredients;
         this.utensils = utensils;
         this.steps = steps;
         this.students = students;
+        this.imagePath = imagePath;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     public String getId() {

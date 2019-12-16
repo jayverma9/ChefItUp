@@ -56,14 +56,14 @@ public class ClassController {
     @RequestMapping(value = "classesForTeacher", method = RequestMethod.GET)
     public ResponseEntity<List<Class>> subscribeClass(@RequestParam(name = "teacher") String teacherUsername) {
         List<Class> teacher_classes = new ArrayList<>();
-        System.out.println("CAME HERE");
+//        System.out.println("CAME HERE");
         List<Class> all_classes = classRepository.findAll();
-        System.out.println(teacherUsername + "YO");
+//        System.out.println(teacherUsername + "YO");
         for (Class cls : all_classes) {
-            System.out.println(cls.getInstructor() + "WTF");
+//            System.out.println(cls.getInstructor() + "WTF");
             if(cls.getInstructor().equals(teacherUsername)) {
                 teacher_classes.add(cls);
-                System.out.println(cls + "HAHAHAHA");
+//                System.out.println(cls + "HAHAHAHA");
             }
         }
         return new ResponseEntity<List<Class>>(teacher_classes, HttpStatus.OK);
@@ -76,7 +76,7 @@ public class ClassController {
         Gson g = new Gson();
 
         //JSON file to Java object
-        System.out.println(classs);
+
         Class classss = g.fromJson(classs, Class.class);
         classRepository.save(classss);
 
