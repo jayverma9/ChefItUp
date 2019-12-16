@@ -78,7 +78,6 @@ public class ClassController {
         //JSON file to Java object
 
         Class classss = g.fromJson(classs, Class.class);
-        System.out.println(classss.getRecipes().get(0).getSteps().get(0).getImageFile()+ "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
         classRepository.save(classss);
 
 
