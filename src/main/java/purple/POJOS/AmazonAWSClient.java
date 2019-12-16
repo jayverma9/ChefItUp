@@ -1,5 +1,6 @@
 package purple.POJOS;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3;
@@ -58,6 +59,8 @@ public class AmazonAWSClient {
         try {
             File file = convertMultiPartToFile(multipartFile);
             String fileName = generateFileName(multipartFile);
+            System.out.print(file.getName());
+
             fileUrl = endpointUrl + "/" + bucketName + "/" + fileName;
             uploadFileTos3bucket(fileName, file);
             file.delete();

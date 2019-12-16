@@ -7,9 +7,9 @@ public class Step {
     private String action;
     private String description;
     private String outcome;
-    private File imageFile;
+    private String imageFile;
 
-    public Step(Ingredient ingredient, String action, String description, String outcome, File imageFile) {
+    public Step(Ingredient ingredient, String action, String description, String outcome, String imageFile) {
         this.ingredient = ingredient;
         this.action = action;
         this.description = description;
@@ -25,11 +25,11 @@ public class Step {
         this.outcome = outcome;
     }
 
-    public File getImageFile() {
+    public String getImageFile() {
         return imageFile;
     }
 
-    public void setImageFile(File imageFile) {
+    public void setImageFile(String imageFile) {
         this.imageFile = imageFile;
     }
 

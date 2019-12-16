@@ -15,7 +15,7 @@ public class UtensilMongoDBConfig {
     @Bean
     CommandLineRunner commandLineRunner(UtensilRepository utensilRepository) {
         return strings -> {
-            utensilRepository.save(new Utensil("pan", "Empty", "3/4 quarts", new String[0], "Cast Iron Pan"));
+//            utensilRepository.save(new Utensil("pan", "Empty", "3/4 quarts", new String[0], "Cast Iron Pan"));
         };
     }
 }
