@@ -7,9 +7,12 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
    import purple.POJOS.Class;
 import purple.POJOS.Recipe;
 import purple.POJOS.Student;
+import purple.POJOS.Utensil;
 import purple.Repositories.*;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
 
 //This class handles mongo configurations
 @Configuration
@@ -22,32 +25,18 @@ public class ClassMongoDBConfig {
                                         TeacherRepository teacherRepository, UtensilRepository utensilRepository) {
         return strings -> {
 
+            List<Utensil> u = utensilRepository.findAll();
+            Utensil ut = null;
 
-//            classRepository.deleteAll();
-//
-//            classRepository.save(
-//
-//                    new Class("Indian Food",
-//                            "Spicy and burst of flavours",
-//                            recipeRepository.findAll(),
-//                            studentRepository.findAll()
-//                    )
-//                );
-//            classRepository.save(
-//
-//                    new Class("Italian Food",
-//                            "Spicy and burst of flavours",
-//                            recipeRepository.findAll(),
-//                            studentRepository.findAll()
-//                    )
-//            ); classRepository.save(
-//
-//                    new Class("Jamaican Food",
-//                            "Spicy and burst of flavours",
-//                            recipeRepository.findAll(),
-//                            studentRepository.findAll()
-//                    )
-//            );
+            ListIterator<Utensil> l = u.listIterator();
+
+            while(l.hasNext()){
+                ut = l.next();
+                if(ut.getName() == "pan"){
+                    utensilRepository.delete(ut);
+                    System.out.print("ut deleted");
+                }
+            }
 
         };
     }
