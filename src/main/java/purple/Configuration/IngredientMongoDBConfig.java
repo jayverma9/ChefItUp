@@ -15,7 +15,7 @@ public class IngredientMongoDBConfig {
     @Bean
     CommandLineRunner commandLineRunner(IngredientRepository ingredientRepository) {
         return strings -> {
-            ingredientRepository.save(new Ingredient("parsley", "Empty", "leafy vegetable", "solid", "smells good"));
+//            ingredientRepository.save(new Ingredient("parsley", "Empty", "leafy vegetable", "solid", "smells good"));
         };
     }
 }
