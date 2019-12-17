@@ -24,20 +24,6 @@ public class ClassMongoDBConfig {
                                         RecipeRepository recipeRepository, StudentRepository studentRepository,
                                         TeacherRepository teacherRepository, UtensilRepository utensilRepository) {
         return strings -> {
-
-            List<Utensil> u = utensilRepository.findAll();
-            Utensil ut = null;
-
-            ListIterator<Utensil> l = u.listIterator();
-
-            while(l.hasNext()){
-                ut = l.next();
-                if(ut.getName() == "pan"){
-                    utensilRepository.delete(ut);
-                    System.out.print("ut deleted");
-                }
-            }
-
         };
     }
 }
