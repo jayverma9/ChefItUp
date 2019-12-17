@@ -57,7 +57,7 @@ public class AmazonAWSClient {
         String fileUrl = "";
         try {
             File file = convertMultiPartToFile(multipartFile);
-            String fileName = /*generateFileName(multipartFile);*/ file.getName();
+            String fileName = generateFileName(multipartFile); /*file.getName()*/;
             System.out.print(file.getName());
             fileUrl = endpointUrl + "/" + bucketName + "/" + fileName;
             uploadFileTos3bucket(fileName, file);
