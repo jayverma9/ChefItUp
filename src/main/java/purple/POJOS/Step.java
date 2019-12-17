@@ -8,13 +8,23 @@ public class Step {
     private String description;
     private String outcome;
     private String imageFile;
+    private Utensil utensil;
 
-    public Step(Ingredient ingredient, String action, String description, String outcome, String imageFile) {
+    public Step(Ingredient ingredient, String action, String description, String outcome, String imageFile, Utensil utensil) {
         this.ingredient = ingredient;
         this.action = action;
         this.description = description;
         this.outcome = outcome;
         this.imageFile = imageFile;
+        this.utensil = utensil;
+    }
+
+    public Utensil getUtensil() {
+        return utensil;
+    }
+
+    public void setUtensil(Utensil utensil) {
+        this.utensil = utensil;
     }
 
     public String getOutcome() {
